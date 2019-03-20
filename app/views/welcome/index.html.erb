@@ -2,3 +2,8 @@
 <p>
   The time is now: <%= Time.now %>
 </p>
+
+<%= @object.each do |single| %>
+    <h4> <%=single%> </h4>
+
+<% end %>
