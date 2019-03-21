@@ -11,13 +11,15 @@
 <br><br> <b>homeworld:</b> <%= JSON.parse(RestClient.get(@new_item2["homeworld"]))["name"]%>
 
 <br><br> <b>Films:</b> <% @new_item2["films"].each do |peli|%><br>
-    <%= JSON.parse(RestClient.get(peli))["title"]%>
+<% @pel = JSON.parse(RestClient.get(peli))%>
+<%= link_to @pel["title"],welcome/especificacion (:pl_id => @pel["url"])%>
+
 <%end%>
 
 <br><br> <b>starships:</b> <% @new_item2["starships"].each do |star|%><br>
-    <%= JSON.parse(RestClient.get(star))["name"]%>
+<% @stnave = JSON.parse(RestClient.get(star))%>
+<%= link_to @stnave["name"],nave_index_path(:pl_id => @stnave["url"])%>    
 <%end%>
-
 
 </p>
 <br> <%= link_to "back", root_path %>

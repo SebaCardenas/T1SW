@@ -6,6 +6,10 @@ class PlanetController < ApplicationController
             response2 = RestClient.get(url2)
             json2 = JSON.parse(response2)
             @new_item2 = json2
+            @personatt = []
+            #json2["films"].each do |film|
+            #@personatt.puts JSON.parse(RestCLient.get(film).body)["name"]
+            #end
         end
     end
 end
