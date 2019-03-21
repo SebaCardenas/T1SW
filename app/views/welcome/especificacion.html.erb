@@ -1,4 +1,3 @@
-
 <h1> Especificaciones Película</h1>
 
 <p><b>Película:</b> <%=@new_item["title"]%> 
@@ -13,7 +12,8 @@
 <%end%>
 
 <br><br> <b>Planets:</b> <% @new_item["planets"].each do |planetas|%><br>
-<%= JSON.parse(RestClient.get(planetas))["name"]%>
+<% @planet = JSON.parse(RestClient.get(planetas))%>
+<%= link_to @planet["name"],planet_index_path(:pl_id => @planet["url"])%>
 <%end%>
 
 <br><br> <b>Starships:</b> <% @new_item["starships"].each do |naves|%><br>
