@@ -1,9 +1,11 @@
 <h2>Starwars Movies</h2>
 
 <% @object.each do |item|%>
-<p><b>Película:</b> <%= item["title"]%> 
+<p><b>Película:</b> <%=item["title"]%> 
 <br> <b>Lanzamiento:</b> <%= item["release_date"]%> 
 <br> <b>Productor/es:</b> <%= item["producer"]%> 
-<br> <b>Director:</b> <%= item["director"]%></p>
-<% end %>
+<br> <b>Director:</b> <%= item["director"]%>
+<br> <b>N° Episodio:</b> <%= item["episode_id"]%>
+<br> <%= link_to "Ver más", "welcome/especificacion", :pelicula => item%> </p>
 
+<% end %>

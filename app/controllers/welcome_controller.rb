@@ -5,4 +5,8 @@ class WelcomeController < ApplicationController
     json = JSON.parse(response)
     @object = json["results"]
    end
+   def show
+    render template: "welcome/especificacion"
+  end
+  
 end
