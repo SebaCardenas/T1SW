@@ -6,6 +6,8 @@
 <br> <b>Productor/es:</b> <%= item["producer"]%> 
 <br> <b>Director:</b> <%= item["director"]%>
 <br> <b>N° Episodio:</b> <%= item["episode_id"]%>
-<br> <%= link_to "Ver más", "welcome/especificacion", :pelicula => item%> </p>
+<br> 
+<%=button_to "ver más", "welcome/show",method: :get, params: {:p_id => item["url"]}%>
+</p>
 
 <% end %>
