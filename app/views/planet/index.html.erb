@@ -1,0 +1,21 @@
+<h1> Especificaciones Planeta</h1>
+
+<p><b>Planeta:</b> <%=@new_item2["name"]%> 
+<br><br> <b>Rotation Period:</b> <%= @new_item2["rotation_period"]%> 
+<br><br> <b>orbital_period:</b> <%= @new_item2["orbital_period"]%> 
+<br><br> <b>diameter:</b> <%= @new_item2["diameter"]%>
+<br><br> <b>climate:</b> <%= @new_item2["climate"]%>
+<br><br> <b>gravity:</b> <%= @new_item2["gravity"]%>
+<br><br> <b>terrain:</b> <%= @new_item2["terrain"]%> 
+<br><br> <b>surface_water:</b> <%= @new_item2["surface_water"]%> 
+<br><br> <b>population:</b> <%= @new_item2["population"]%>
+
+<br><br> <b>Residents:</b> <% @new_item2["residents"].each do |personajes|%><br>
+    <%= JSON.parse(RestClient.get(personajes))["name"]%>
+<%end%>
+
+<br><br> <b>Films:</b> <% @new_item2["films"].each do |peli|%><br>
+    <%= JSON.parse(RestClient.get(peli))["title"]%>
+<%end%>
+</p>
+<br> <%= link_to "back", root_path %>
