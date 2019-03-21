@@ -8,7 +8,7 @@
 <br><br> <b>eye_color:</b> <%= @new_item2["eye_color"]%>
 <br><br> <b>birth_year:</b> <%= @new_item2["birth_year"]%> 
 <br><br> <b>gender:</b> <%= @new_item2["gender"]%> 
-<br><br> <b>homeworld:</b> <%= JSON.parse(RestClient.get(@new_item2["homeworld"])["name"]%>
+<br><br> <b>homeworld:</b> <%= JSON.parse(RestClient.get(@new_item2["homeworld"]))["name"]%>
 
 <br><br> <b>Films:</b> <% @new_item2["films"].each do |peli|%><br>
     <%= JSON.parse(RestClient.get(peli))["title"]%>
