@@ -13,7 +13,10 @@
 <br><br> <b>hyperdrive_rating:</b> <%= @new_item2["hyperdrive_rating"]%> 
 <br><br> <b>MGLT:</b> <%= @new_item2["MGLT"]%>
 <br><br> <b>starship_class:</b> <%= @new_item2["starship_class"]%>
-<br><br> <b>pilots:</b> <%= @new_item2["pilots"]%> 
+
+<br><br> <b>pilots:</b> <% @new_item2["pilots"].each do |pilo|%><br>
+    <%= JSON.parse(RestClient.get(pilo))["name"]%>
+<%end%>
 
 <br><br> <b>Films:</b> <% @new_item2["films"].each do |peli|%><br>
     <%= JSON.parse(RestClient.get(peli))["title"]%>
