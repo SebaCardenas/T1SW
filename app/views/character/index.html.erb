@@ -12,7 +12,7 @@
 
 <br><br> <b>Films:</b> <% @new_item2["films"].each do |peli|%><br>
 <% @pel = JSON.parse(RestClient.get(peli))%>
-<%= link_to @pel["title"],welcome/especificacion (:pl_id => @pel["url"])%>
+<%= link_to @pel["title"],"welcome/especificacion"(:pl_id => @pel["url"])%>
 
 <%end%>
 
