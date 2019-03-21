@@ -1,6 +1,9 @@
 <h2>Starwars Movies</h2>
 
 <% @object.each do |item|%>
-<h4><%= item["title"] item["release_date"] item["producer"] item["director"]  %></h4>
+<p><b>Película:</b> <%= item["title"]%> 
+<br> <b>Lanzamiento:</b> <%= item["release_date"]%> 
+<br> <b>Productor/es:</b> <%= item["producer"]%> 
+<br> <b>Director:</b> <%= item["director"]%></p>
 <% end %>
 
