@@ -9,7 +9,7 @@
 
 <br><br> <b>Characters:</b> <% @new_item["characters"].each do |personajes|%><br>
 <% @persona = JSON.parse(RestClient.get(personajes))%>
-<%= link_to @persona["name"],character_index(:pl_id => @persona["url"])%>
+<%= link_to @persona["name"],character_index_path(:pl_id => @persona["url"])%>
 <%end%>
 
 <br><br> <b>Planets:</b> <% @new_item["planets"].each do |planetas|%><br>
@@ -19,7 +19,7 @@
 
 <br><br> <b>Starships:</b> <% @new_item["starships"].each do |naves|%><br>
 <% @stnave = JSON.parse(RestClient.get(naves))%>
-<%= link_to @stnave["name"],nave_index(:pl_id => @stnave["url"])%>
+<%= link_to @stnave["name"],nave_index_path(:pl_id => @stnave["url"])%>
 <%end%>
 
 <br> 

@@ -14,8 +14,8 @@
     <%= JSON.parse(RestClient.get(peli))["title"]%>
 <%end%>
 
-<br><br> <b>starships:</b> <% @new_item2["starships"].each do |personajes|%><br>
-    <%= JSON.parse(RestClient.get(personajes))["name"]%>
+<br><br> <b>starships:</b> <% @new_item2["starships"].each do |star|%><br>
+    <%= JSON.parse(RestClient.get(star))["name"]%>
 <%end%>
 
 
