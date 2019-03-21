@@ -1,0 +1,23 @@
+<h1> Especificaciones Personaje</h1>
+
+<p><b>Nombre:</b> <%=@new_item2["name"]%> 
+<br><br> <b>height:</b> <%= @new_item2["height"]%> 
+<br><br> <b>mass:</b> <%= @new_item2["mass"]%> 
+<br><br> <b>hair_color:</b> <%= @new_item2["hair_color"]%>
+<br><br> <b>skin_color:</b> <%= @new_item2["skin_color"]%>
+<br><br> <b>eye_color:</b> <%= @new_item2["eye_color"]%>
+<br><br> <b>birth_year:</b> <%= @new_item2["birth_year"]%> 
+<br><br> <b>gender:</b> <%= @new_item2["gender"]%> 
+<br><br> <b>homeworld:</b> <%= JSON.parse(RestClient.get(@new_item2["homeworld"])["name"]%>
+
+<br><br> <b>Films:</b> <% @new_item2["films"].each do |peli|%><br>
+    <%= JSON.parse(RestClient.get(peli))["title"]%>
+<%end%>
+
+<br><br> <b>starships:</b> <% @new_item2["starships"].each do |personajes|%><br>
+    <%= JSON.parse(RestClient.get(personajes))["name"]%>
+<%end%>
+
+
+</p>
+<br> <%= link_to "back", root_path %>

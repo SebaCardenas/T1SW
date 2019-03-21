@@ -8,7 +8,8 @@
 <br><br> <b>Opening Crawl:</b> <%= @new_item["opening_crawl"]%>
 
 <br><br> <b>Characters:</b> <% @new_item["characters"].each do |personajes|%><br>
-    <%= JSON.parse(RestClient.get(personajes))["name"]%>
+<% @persona = JSON.parse(RestClient.get(personajes))%>
+<%= link_to @persona["name"],character_index(:pl_id => @persona["url"])%>
 <%end%>
 
 <br><br> <b>Planets:</b> <% @new_item["planets"].each do |planetas|%><br>
@@ -17,7 +18,8 @@
 <%end%>
 
 <br><br> <b>Starships:</b> <% @new_item["starships"].each do |naves|%><br>
-<%= JSON.parse(RestClient.get(naves))["name"]%>
+<% @stnave = JSON.parse(RestClient.get(naves))%>
+<%= link_to @stnave["name"],nave_index(:pl_id => @stnave["url"])%>
 <%end%>
 
 <br> 
