@@ -1,3 +1,25 @@
-<h1> Hola Especificacion</h1>
-<h4><%= @new_item %></h4>
+
+<h1> Especificaciones Película</h1>
+
+<p><b>Película:</b> <%=@new_item["title"]%> 
+<br><br> <b>Lanzamiento:</b> <%= @new_item["release_date"]%> 
+<br><br> <b>Productor/es:</b> <%= @new_item["producer"]%> 
+<br><br> <b>Director:</b> <%= @new_item["director"]%>
+<br><br> <b>N° Episodio:</b> <%= @new_item["episode_id"]%>
+<br><br> <b>Opening Crawl:</b> <%= @new_item["opening_crawl"]%>
+
+<br><br> <b>Characters:</b> <% @new_item["characters"].each do |personajes|%><br>
+    <%= JSON.parse(RestClient.get(personajes))["name"]%>
+<%end%>
+
+<br><br> <b>Planets:</b> <% @new_item["planets"].each do |planetas|%><br>
+<%= JSON.parse(RestClient.get(planetas))["name"]%>
+<%end%>
+
+<br><br> <b>Starships:</b> <% @new_item["starships"].each do |naves|%><br>
+<%= JSON.parse(RestClient.get(naves))["name"]%>
+<%end%>
+
+<br> 
+</p>
 <br> <%= link_to "back", root_path %>
