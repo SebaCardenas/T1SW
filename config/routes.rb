@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :welcome, :planet, :character, :nave
+  resources :welcome, :planet, :character, :nave, :pelicula
   root 'welcome#index'
-  root 'welcome#especificacion'
+  root 'pelicula#index'
   root 'planet#index'
   root 'character#index'
   root 'nave#index'

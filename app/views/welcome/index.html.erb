@@ -7,7 +7,7 @@
 <br> <b>Director:</b> <%= item["director"]%>
 <br> <b>N° Episodio:</b> <%= item["episode_id"]%>
 <br> 
-<%=button_to "ver más", "welcome/show",method: :get, params: {:p_id => item["url"]}%>
+<%= link_to "ver más", pelicula_index_path(:p_id => item["url"])%>
 </p>
 
 <% end %>
