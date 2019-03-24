@@ -48,7 +48,7 @@ class WelcomeController < ApplicationController
             end 
         end
         if @verificador == false
-            redirect_to(search_welcome_path, :alert => 'NOT FOUND!') and return
+            redirect_to(search_welcome_path, :alert => 'NOT FOUND!')
         end 
     end
   end
