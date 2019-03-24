@@ -16,6 +16,7 @@ class WelcomeController < ApplicationController
       response = RestClient.get(url)
       json2 = JSON.parse(response)
       @object2 = json2
+      @verificador = Faslse
 
       @object2.each do |tipo|
         url = tipo[1]
@@ -25,26 +26,32 @@ class WelcomeController < ApplicationController
         @object3.each do |nombre|
         if url == 'https://swapi.co/api/films/'
           if nombre['title'].downcase == @parameter
+            @verificador = True
             redirect_to pelicula_index_path(:p_id => nombre['url'])
           end
         elsif url == 'https://swapi.co/api/people/'
           if nombre['name'].downcase == @parameter
+            @verificador = True
             redirect_to character_index_path(:pl_id => nombre['url'])
           end
         elsif url == 'https://swapi.co/api/planets/'
           if nombre['name'].downcase == @parameter
+            @verificador = True
             redirect_to planet_index_path(:pl_id => nombre['url'])
           end
         elsif url == 'https://swapi.co/api/starships/'
           if nombre['name'].downcase == @parameter
+            @verificador = True
             redirect_to nave_index_path(:pl_id => nombre['url'])
           end
         end
         end 
       end
+      if verificador == Faslse
+        redirect_to search_welcome_path
+       end
     end  
   end
-  
 
 end
 

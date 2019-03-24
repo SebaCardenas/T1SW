@@ -51,7 +51,7 @@ class CharacterController < ApplicationController
       end
       if verificador == Faslse
         redirect_to search_welcome_path
-    end
+       end
     end  
   end
 
