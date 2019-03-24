@@ -7,9 +7,6 @@
     <%= button_tag "Sumit", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>     
   </div>  
 <% end %>
-<%=if @verificador == false%>
-<h4>NOT FOUND</h4>
-<%end%>
 
 <% @object.each do |item|%>
 <p><b>Película:</b> <%=item["title"]%> 
