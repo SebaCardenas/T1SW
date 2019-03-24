@@ -1,5 +1,13 @@
 <h1> Especificaciones Personaje</h1>
 
+<%= form_tag(search_character_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <%= button_tag "Sumit", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>     
+  </div>  
+<% end %>
+
 <p><b>Nombre:</b> <%=@new_item2["name"]%> 
 <br><br> <b>height:</b> <%= @new_item2["height"]%> 
 <br><br> <b>mass:</b> <%= @new_item2["mass"]%> 

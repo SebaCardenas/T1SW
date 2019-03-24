@@ -1,23 +1,31 @@
 <h1> Especificaciones Película</h1>
 
-<p><b>Película:</b> <%=@new_item["title"]%> 
-<br><br> <b>Lanzamiento:</b> <%= @new_item["release_date"]%> 
-<br><br> <b>Productor/es:</b> <%= @new_item["producer"]%> 
-<br><br> <b>Director:</b> <%= @new_item["director"]%>
-<br><br> <b>N° Episodio:</b> <%= @new_item["episode_id"]%>
-<br><br> <b>Opening Crawl:</b> <%= @new_item["opening_crawl"]%>
+<%= form_tag(search_pelicula_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <%= button_tag "Sumit", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>     
+  </div>  
+<% end %>
 
-<br><br> <b>Characters:</b> <% @new_item["characters"].each do |personajes|%><br>
+<p><b>Película:</b> <%=@new_item2["title"]%> 
+<br><br> <b>Lanzamiento:</b> <%= @new_item2["release_date"]%> 
+<br><br> <b>Productor/es:</b> <%= @new_item2["producer"]%> 
+<br><br> <b>Director:</b> <%= @new_item2["director"]%>
+<br><br> <b>N° Episodio:</b> <%= @new_item2["episode_id"]%>
+<br><br> <b>Opening Crawl:</b> <%= @new_item2["opening_crawl"]%>
+
+<br><br> <b>Characters:</b> <% @new_item2["characters"].each do |personajes|%><br>
 <% @persona = JSON.parse(RestClient.get(personajes))%>
 <%= link_to @persona["name"],character_index_path(:pl_id => @persona["url"])%>
 <%end%>
 
-<br><br> <b>Planets:</b> <% @new_item["planets"].each do |planetas|%><br>
+<br><br> <b>Planets:</b> <% @new_item2["planets"].each do |planetas|%><br>
 <% @planet = JSON.parse(RestClient.get(planetas))%>
 <%= link_to @planet["name"],planet_index_path(:pl_id => @planet["url"])%>
 <%end%>
 
-<br><br> <b>Starships:</b> <% @new_item["starships"].each do |naves|%><br>
+<br><br> <b>Starships:</b> <% @new_item2["starships"].each do |naves|%><br>
 <% @stnave = JSON.parse(RestClient.get(naves))%>
 <%= link_to @stnave["name"],nave_index_path(:pl_id => @stnave["url"])%>
 <%end%>

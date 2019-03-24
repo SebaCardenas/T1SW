@@ -1,5 +1,13 @@
 <h1> Especificaciones Planeta</h1>
 
+<%= form_tag(search_planet_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <%= button_tag "Sumit", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>     
+  </div>  
+<% end %>
+
 <p><b>Planeta:</b> <%=@new_item2["name"]%> 
 <br><br> <b>Rotation Period:</b> <%= @new_item2["rotation_period"]%> 
 <br><br> <b>orbital_period:</b> <%= @new_item2["orbital_period"]%> 

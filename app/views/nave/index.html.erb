@@ -1,5 +1,13 @@
 <h1> Especificaciones Starship</h1>
 
+<%= form_tag(search_nave_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <%= button_tag "Sumit", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>     
+  </div>  
+<% end %>
+
 <p><b>Nombre:</b> <%=@new_item2["name"]%> 
 <br><br> <b>model:</b> <%= @new_item2["model"]%> 
 <br><br> <b>manufacturer:</b> <%= @new_item2["manufacturer"]%> 
