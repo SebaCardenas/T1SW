@@ -48,7 +48,7 @@ class WelcomeController < ApplicationController
             end 
         end
         if @verificador == false
-            redirect_to rooth_path
+            redirect_to root_path
         end 
     end
   end
