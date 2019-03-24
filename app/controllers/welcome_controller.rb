@@ -48,7 +48,8 @@ class WelcomeController < ApplicationController
             end 
         end
         if @verificador == false
-            redirect_to(search_welcome_path, :alert => 'NOT FOUND!')
+          flash[:alert] = 'NOT FOUND'
+          redirect_to(search_welcome_path)
         end 
     end
   end
