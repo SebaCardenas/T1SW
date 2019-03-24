@@ -48,7 +48,7 @@ class WelcomeController < ApplicationController
             end 
         end
         if @verificador == false
-            redirect_to root_path
+            render welcome_search_path
         end 
     end
   end
