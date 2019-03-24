@@ -48,7 +48,7 @@ class WelcomeController < ApplicationController
             end 
         end
         if @verificador == false
-            render search_welcome_path
+            render template: search_welcome_path
         end 
     end
   end
