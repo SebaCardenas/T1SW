@@ -50,7 +50,6 @@ class WelcomeController < ApplicationController
         if @verificador == false
           flash[:alert] = 'NOT FOUND'
           flash[:notice] = "Post successfully created"
-          redirect_to(search_welcome_path)
         end 
     end
   end

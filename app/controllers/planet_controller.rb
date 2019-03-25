@@ -53,9 +53,7 @@ class PlanetController < ApplicationController
                     end
                 end 
             end
-            if @verificador == false
-                redirect_to search_planet_path
-            end 
+
         end
     end
 

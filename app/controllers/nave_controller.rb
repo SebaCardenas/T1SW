@@ -49,9 +49,7 @@ class NaveController < ApplicationController
                     end
                 end 
             end
-            if @verificador == false
-                redirect_to search_nave_path
-            end 
+
         end
     end
 end

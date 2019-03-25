@@ -49,9 +49,7 @@ class PeliculaController < ApplicationController
                     end
                 end 
             end
-            if @verificador == false
-                redirect_to search_pelicula_path
-            end 
+
         end
     end
 end

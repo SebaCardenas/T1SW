@@ -49,9 +49,7 @@ class CharacterController < ApplicationController
                     end
                 end 
             end
-            if @verificador == false
-                redirect_to search_character_path
-            end 
+
         end
     end
 end
